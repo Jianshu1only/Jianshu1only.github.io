@@ -1,75 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jianshu She</title>
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            max-width: 720px;
+            margin: 40px auto;
+            padding: 0 20px;
+            font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #222;
+        }
+        img {
+            width: 150px;
+            border-radius: 4px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        h1 {
+            margin-bottom: 5px;
+            font-size: 32px;
+        }
+        h2 {
+            margin-top: 40px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 4px;
+        }
+        .contact a {
+            margin-right: 12px;
+            text-decoration: none;
+            color: #0366d6;
+        }
+        .project {
+            margin-bottom: 20px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <h1>Jianshu She</h1>
-            <img src="IMG_2145.jpg" alt="Jianshu She" class="profile-photo">
-            <p>MBZUAI PhD Student/ML Engineer</p>
-            <div class="contact">
-                <a href="mailto:Jianshu.She@MBZUAI.com">Jianshu.She@MBZUAI.com</a> | 
-                <a href="https://github.com/Jianshu1only">GitHub</a> | 
-                <a href="#">LinkedIn</a>
-            </div>
-        </header>
 
-        <section>
-            <h2>About</h2>
-            <p>I am a third-year PhD student at MBZUAI, my advisors are Prof. Qirong Ho and Prof. Steve Liu. My research interests include LLM efficient reasoning, efficient post-training, LLM serving system, and cloud-edge collaborative reasoning optimization. I am also an integrated circuit design engineer at MBZUAI, responsible for chip front-end design and verification.</p>
-        </section>
+    <h1>Jianshu She</h1>
+    <img src="IMG_2145.jpg" alt="Profile photo">
+    <p>MBZUAI PhD Student · ML Engineer</p>
 
-        <section>
-            <h2>Skills</h2>
-            <div class="skills">
-                <div class="skill-group">
-                    <h3>Frontend</h3>
-                    <p>HTML5, CSS3, JavaScript, TypeScript, React, Vue.js</p>
-                </div>
-                <div class="skill-group">
-                    <h3>Backend</h3>
-                    <p>Python, Django, Node.js, Express, RESTful API</p>
-                </div>
-                <div class="skill-group">
-                    <h3>Tools</h3>
-                    <p>Git, GitHub, Docker, Linux, CI/CD</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>Project One</h3>
-                <p>A sample project description showcasing an application built with modern technology stack.</p>
-                <p><strong>Tech:</strong> React, Node.js, MongoDB</p>
-                <p><a href="#">View Code</a> | <a href="#">Live Demo</a></p>
-            </div>
-            <div class="project">
-                <h3>Project Two</h3>
-                <p>Another exciting project demonstrating innovative solutions and excellent user experience.</p>
-                <p><strong>Tech:</strong> Vue.js, Python, PostgreSQL</p>
-                <p><a href="#">View Code</a> | <a href="#">Live Demo</a></p>
-            </div>
-            <div class="project">
-                <h3>Project Three</h3>
-                <p>An open source project aimed at helping developers improve their productivity.</p>
-                <p><strong>Tech:</strong> TypeScript, Docker, Redis</p>
-                <p><a href="#">View Code</a> | <a href="#">Live Demo</a></p>
-            </div>
-        </section>
-
-        <section>
-            <h2>Contact</h2>
-            <p>Feel free to reach out if you have any questions or collaboration opportunities!</p>
-            <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-            <p>GitHub: <a href="https://github.com/Jianshu1only">github.com/Jianshu1only</a></p>
-        </section>
+    <div class="contact">
+        <a href="mailto:Jianshu.She@MBZUAI.com">Email</a>
+        <a href="https://github.com/Jianshu1only">GitHub</a>
+        <a href="#">LinkedIn</a>
     </div>
+
+    <h2>About</h2>
+    <p>
+        I am a third-year PhD student at MBZUAI advised by Prof. Qirong Ho and Prof. Steve Liu. 
+        My research interests include LLM efficient reasoning, efficient post-training, 
+        LLM serving systems, and cloud-edge collaborative reasoning optimization. 
+        I also work as an integrated circuit design engineer responsible for chip front-end design and verification.
+    </p>
+
+    <h2>Skills</h2>
+    <p><strong>Frontend:</strong> HTML5, CSS3, JavaScript, TypeScript, React, Vue.js</p>
+    <p><strong>Backend:</strong> Python, Django, Node.js, Express, RESTful API</p>
+    <p><strong>Tools:</strong> Git, GitHub, Docker, Linux, CI/CD</p>
+
+    <h2>Projects</h2>
+
+    <div class="project">
+        <strong>Project One</strong>  
+        <p>A sample project demonstrating an application built with modern technologies.</p>
+        <p><em>Tech:</em> React, Node.js, MongoDB</p>
+    </div>
+
+    <div class="project">
+        <strong>Project Two</strong>
+        <p>Another exciting project involving innovative solutions and modern UX.</p>
+        <p><em>Tech:</em> Vue.js, Python, PostgreSQL</p>
+    </div>
+
+    <div class="project">
+        <strong>Project Three</strong>
+        <p>An open-source project aimed at improving developer productivity.</p>
+        <p><em>Tech:</em> TypeScript, Docker, Redis</p>
+    </div>
+
+    <h2>Contact</h2>
+    <p>
+        Feel free to reach out for questions or collaboration opportunities.
+    </p>
+    <p>
+        Email: <a href="mailto:Jianshu.She@MBZUAI.com">Jianshu.She@MBZUAI.com</a><br>
+        GitHub: <a href="https://github.com/Jianshu1only">github.com/Jianshu1only</a>
+    </p>
+
 </body>
 </html>
