@@ -7,7 +7,7 @@
 
     <style>
         body {
-            max-width: 720px;
+            max-width: 900px;
             margin: 40px auto;
             padding: 0 20px;
             font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
@@ -15,14 +15,14 @@
             color: #222;
         }
         img {
-            width: 150px;
-            border-radius: 4px;
+            width: 160px;
+            border-radius: 6px;
             display: block;
             margin-bottom: 10px;
         }
         h1 {
-            margin-bottom: 5px;
-            font-size: 32px;
+            margin-bottom: 20px;
+            font-size: 34px;
         }
         h2 {
             margin-top: 40px;
@@ -34,11 +34,41 @@
             text-decoration: none;
             color: #0366d6;
         }
-        .project {
-            margin-bottom: 20px;
-        }
         a:hover {
             text-decoration: underline;
+        }
+
+        /* --- NEW: two-column layout for profile + about --- */
+        .profile-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 28px;
+            margin-bottom: 40px;
+        }
+        .profile-left {
+            flex: 0 0 auto;
+            text-align: left;
+        }
+        .profile-right {
+            flex: 1;
+        }
+
+        /* Mobile view: stack vertically */
+        @media (max-width: 700px) {
+            .profile-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .profile-right {
+                width: 100%;
+            }
+        }
+
+        footer {
+            margin-top: 60px;
+            font-size: 12px;
+            color: #888;
+            text-align: center;
         }
     </style>
 </head>
@@ -46,23 +76,33 @@
 <body>
 
     <h1>Jianshu She</h1>
-    <img src="IMG_2145.jpg" alt="Profile photo">
-    <p>MBZUAI PhD Student</p>
 
-    <div class="contact">
-        <a href="mailto:Jianshu.She@MBZUAI.com">Email</a>
-        <a href="https://github.com/Jianshu1only">GitHub</a>
-        <a href="#">LinkedIn</a>
-        <a href="https://scholar.google.com/citations?user=e7KrLSEAAAAJ&hl=en">Google Scholar</a>
+    <div class="profile-container">
+        <!-- LEFT SIDE -->
+        <div class="profile-left">
+            <img src="IMG_2145.jpg" alt="Profile photo">
+            <p>MBZUAI PhD Student</p>
+
+            <div class="contact">
+                <a href="mailto:Jianshu.She@MBZUAI.com">Email</a>
+                <a href="https://github.com/Jianshu1only">GitHub</a>
+                <a href="#">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=e7KrLSEAAAAJ&hl=en">Google Scholar</a>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="profile-right">
+            <h2>About</h2>
+            <p>
+                I am a third-year PhD student at MBZUAI advised by <strong>Prof. Qirong Ho</strong> 
+                and <strong>Prof. Steve Liu</strong>. My research interests include LLM efficient 
+                reasoning, efficient post-training, LLM serving systems, and cloud-edge 
+                collaborative reasoning optimization. I also worked as an integrated circuit 
+                design engineer responsible for chip front-end design and verification.
+            </p>
+        </div>
     </div>
-
-    <h2>About</h2>
-    <p>
-        I am a third-year PhD student at MBZUAI advised by <strong>Prof. Qirong Ho</strong> and <strong>Prof. Steve Liu</strong>. 
-        My research interests include LLM efficient reasoning, efficient post-training, 
-        LLM serving systems, and cloud-edge collaborative reasoning optimization. 
-        I also worked as an integrated circuit design engineer responsible for chip front-end design and verification.
-    </p>
 
     <h2>Publications</h2>
 
@@ -76,7 +116,7 @@
     <li>
         <strong>Token level routing inference system for edge devices</strong><br>
         <em><strong>Jianshu She</strong>, Wenhao Zheng, Zhengzhong Liu, Hongyi Wang, Eric Xing, Huaxiu Yao, Qirong Ho</em><br>
-        ACL demo 2025
+        ACL Demo 2025
     </li>
 
     <li>
@@ -88,14 +128,13 @@
     <li>
         <strong>Linear Steerability in Language Models: When It Emerges and How It Evolves</strong><br>
         <em>Zhoujun Cheng, Shibo Hao, Tianyang Liu, Fan Zhou, Yutao Xie, Feng Yao, Yuexin Bian, Yonghao Zhuang, Nilabjo Dey, Yuheng Zha, Yi Gu, Kun Zhou, Yuqi Wang, Yuan Li, Richard Fan, <strong>Jianshu She</strong>, Chengqian Gao, Abulhair Saparov, Haonan Li, Taylor W Killian, Mikhail Yurochkin, Zhengzhong Liu, Eric P Xing, Zhiting Hu</em><br>
-        Neurips Dataset 2025  
+        NeurIPS Datasets & Benchmarks 2025  
     </li>
 
-        <li>
-        <strong> K2-think: A parameter-efficient reasoning system</strong><br>
-        <em>Zhoujun Cheng, Richard Fan, Shibo Hao, Taylor W Killian, Haonan Li, Suqi Sun, Hector Ren, Alexander Moreno, Daqian Zhang, Tianjun Zhong, Yuxin Xiong, Yuanzhe Hu, Yutao Xie, Xudong Han, Yuqi Wang, Varad Pimpalkhute, Yonghao Zhuang, Aaryamonvikram Singh, Xuezhi Liang, Anze Xie, <strong>Jianshu She</strong>, Desai Fan, Chengqian Gao, Liqun Ma, Mikhail Yurochkin, John Maggs, Xuezhe Ma, Guowei He, Zhiting Hu, Zhengzhong Liu, Eric P Xing</em><br>
+    <li>
+        <strong>K2-think: A Parameter-efficient Reasoning System</strong><br>
+        <em>Zhoujun Cheng, Richard Fan, Shibo Hao, Taylor W Killian, Haonan Li, Suqi Sun, Hector Ren, Alexander Moreno, Daqian Zhang, Tianjun Zhong, Yuxin Xiong, Yuanzhe Hu, Yutao Xie, Xudong Han, Yuqi Wang, Varad Pimpalkhute, Yonghao Zhuang, Aaryamonvikram Singh, Xuezhi Liang, Anze Xie, <strong>Jianshu She</strong>, Desai Fan, Chengqian Gao, Liqun Ma, Mikhail Yurochkin, John Maggs, Xuezhe Ma, Guowei He, Zhiting Hu, Zhengzhong Liu, Eric P Xing</em>
     </li>
-
 </ul>
 
     <h2>Contact</h2>
@@ -107,10 +146,9 @@
         GitHub: <a href="https://github.com/Jianshu1only">github.com/Jianshu1only</a>
     </p>
 
-</body>
-
-    <footer style="margin-top: 40px; font-size: 11px; color: #888; text-align: center;">
-    © 2025 Jianshu She · Last updated Dec 2025
+    <footer>
+        © 2025 Jianshu She · Last updated Dec 2025
     </footer>
-    
+
+</body>
 </html>
