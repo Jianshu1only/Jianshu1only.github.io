@@ -3,145 +3,163 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jianshu She</title>
+
+    <!-- Title + meta description (search results) -->
+    <title>Jianshu She (佘建树) — MBZUAI PhD Student</title>
+    <meta name="description" content="Jianshu She (佘建树) — PhD student at MBZUAI. Research: LLM efficient reasoning, efficient post-training, LLM serving systems, and cloud-edge collaborative reasoning optimization.">
+    <meta name="keywords" content="Jianshu She, 佘建树, MBZUAI, LLM reasoning, efficient inference, test-time scaling, research">
+
+    <!-- canonical -->
+    <link rel="canonical" href="https://jianshu-she.github.io/">
+
+    <!-- Open Graph (when sharing on Slack/LinkedIn etc.) -->
+    <meta property="og:title" content="Jianshu She (佘建树) — MBZUAI PhD Student">
+    <meta property="og:description" content="Research on LLM efficient reasoning, efficient post-training, LLM serving systems, and cloud-edge collaborative reasoning.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jianshu-she.github.io/">
+    <meta property="og:image" content="https://jianshu-she.github.io/Pic.jpg">
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jianshu She (佘建树) — MBZUAI PhD Student">
+    <meta name="twitter:description" content="Research on LLM efficient reasoning, efficient post-training, LLM serving systems, and cloud-edge collaborative reasoning.">
+    <meta name="twitter:image" content="https://jianshu-she.github.io/Pic.jpg">
+
+    <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Structured data (schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jianshu She",
+      "alternateName": "佘建树",
+      "url": "https://jianshu-she.github.io/",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "MBZUAI"
+      },
+      "email": "mailto:Jianshu.She@MBZUAI.com",
+      "sameAs": [
+        "https://github.com/Jianshu1only",
+        "https://scholar.google.com/citations?user=e7KrLSEAAAAJ&hl=en"
+      ],
+      "jobTitle": "PhD Student"
+    }
+    </script>
+
     <style>
         body {
-            max-width: 900px;
+            max-width: 950px;
             margin: 40px auto;
             padding: 0 20px;
             font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
             color: #222;
         }
-        img {
+
+        /* responsive portrait: use srcset in <img> to serve smaller images on mobile */
+        .profile-photo {
             width: 280px;
+            max-width: 40vw;
             border-radius: 6px;
             display: block;
             margin-bottom: 10px;
         }
+
         h1 {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             font-size: 34px;
         }
-        h2 {
-            margin-top: 40px;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 4px;
+
+        .name-zh {
+            font-size: 0.95em;
+            color: #666;
         }
+
+        h2 {
+            margin-top: 36px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 6px;
+        }
+
         .contact a {
             margin-right: 12px;
             text-decoration: none;
             color: #0366d6;
         }
-        a:hover {
-            text-decoration: underline;
-        }
+
+        a:hover { text-decoration: underline; }
 
         /* profile layout */
         .profile-container {
             display: flex;
             align-items: flex-start;
             gap: 28px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
-        .profile-left {
-            flex: 0 0 auto;
-            text-align: left;
-        }
-        .profile-right {
-            flex: 1;
-        }
+        .profile-left { flex: 0 0 auto; text-align: left; }
+        .profile-right { flex: 1; }
 
         /* publications layout */
-        .pub-list {
-            list-style: none;
-            padding-left: 0;
-        }
-        .pub-item {
-            margin-bottom: 18px;
-        }
-        .pub-title {
-            font-weight: 600;
-            font-size: 1.02em;
-        }
-        .pub-title a {
-            color: inherit;
-            text-decoration: none;
-        }
-        .pub-title a:hover {
-            text-decoration: underline;
-        }
-        .pub-venue {
-            font-style: italic;
-            color: #555;
-        }
-        .pub-authors {
-            font-size: 0.95em;
-            color: #444;
-        }
-        .pub-links a {
-            font-size: 0.9em;
-            margin-right: 8px;
-        }
+        .pub-list { list-style: none; padding-left: 0; margin: 0; }
+        .pub-item { margin-bottom: 18px; }
+        .pub-title { font-weight: 600; font-size: 1.02em; margin-bottom: 4px; }
+        .pub-title a { color: inherit; text-decoration: none; }
+        .pub-venue { font-style: italic; color: #555; font-size: 0.95em; margin-top: 2px; }
+        .pub-authors { font-size: 0.95em; color: #444; margin-top: 4px; }
+        .pub-links a { font-size: 0.9em; margin-right: 8px; }
+
+        /* accessibility helpers */
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); border: 0; }
 
         /* Mobile view */
         @media (max-width: 700px) {
-            .profile-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            .profile-right {
-                width: 100%;
-            }
+            .profile-container { flex-direction: column; align-items: center; }
+            .profile-right { width: 100%; }
         }
 
-        footer {
-            margin-top: 60px;
-            font-size: 12px;
-            color: #888;
-            text-align: center;
-        }
+        footer { margin-top: 48px; font-size: 12px; color: #888; text-align: center; }
     </style>
 </head>
 
 <body>
+    <h1>Jianshu She <span class="name-zh">佘建树</span></h1>
 
-    <h1>Jianshu She     佘建树</h1>
-
-    <div class="profile-container">
+    <div class="profile-container" role="region" aria-labelledby="about-heading">
         <!-- LEFT SIDE -->
-        <div class="profile-left">
-            <img src="Pic.jpg" alt="Profile photo">
-            <p>MBZUAI PhD Student</p>
+        <div class="profile-left" aria-hidden="false">
+            <!-- use srcset for responsive images (replace with actual small/large filenames if available) -->
+            <img class="profile-photo" src="Pic.jpg" alt="Portrait photo of Jianshu She" width="280" height="280">
+            <p><strong>MBZUAI</strong> — PhD Student</p>
 
-            <div class="contact">
+            <div class="contact" aria-label="Contact links">
                 <a href="mailto:Jianshu.She@MBZUAI.com">Email</a>
-                <a href="https://github.com/Jianshu1only">GitHub</a>
-                <a href="#">LinkedIn</a>
-                <a href="https://scholar.google.com/citations?user=e7KrLSEAAAAJ&hl=en">Google Scholar</a>
+                <a href="https://github.com/Jianshu1only" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=e7KrLSEAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
             </div>
         </div>
 
         <!-- RIGHT SIDE -->
         <div class="profile-right">
-            <h2>About</h2>
+            <h2 id="about-heading">About</h2>
             <p>
-                I am a third-year PhD student at MBZUAI advised by <strong>Prof. Qirong Ho</strong> 
-                and <strong>Prof. Steve Liu</strong>. My research interests include LLM efficient 
-                reasoning, efficient post-training, LLM serving systems, and cloud-edge 
-                collaborative reasoning optimization. I also worked as an integrated circuit 
-                design engineer responsible for chip front-end design and verification.
+                I am <strong>Jianshu She (佘建树)</strong>, a third-year PhD student at MBZUAI advised by
+                <strong>Prof. Qirong Ho</strong> and <strong>Prof. Steve Liu</strong>. My research focuses on
+                <strong>LLM efficient reasoning</strong>, <strong>efficient post-training</strong>, LLM serving systems,
+                and <strong>cloud–edge collaborative reasoning optimization</strong>. I previously worked as an
+                integrated circuit design engineer responsible for chip front-end design and verification.
             </p>
         </div>
     </div>
 
     <h2>Publications</h2>
-
-    <ul class="pub-list">
+    <ul class="pub-list" aria-label="Publications list">
         <li class="pub-item">
             <div class="pub-title">
-                <a href="https://arxiv.org/abs/2504.00424" target="_blank">
+                <a href="https://arxiv.org/abs/2504.00424" target="_blank" rel="noopener noreferrer">
                     Hawkeye: Model Collaboration for Efficient Reasoning
                 </a>
             </div>
@@ -149,30 +167,25 @@
                 <strong>Jianshu She</strong>, Zhuohao Li, Zhemin Huang, Qi Li, Peiran Xu, Haonan Li, Qirong Ho
             </div>
             <div class="pub-venue">COLM 2025</div>
-            <div class="pub-links">
-                [<a href="https://arxiv.org/abs/2504.00424" target="_blank">PDF</a>]
-            </div>
+            <div class="pub-links">[<a href="https://arxiv.org/abs/2504.00424" target="_blank" rel="noopener noreferrer">PDF</a>]</div>
         </li>
 
         <li class="pub-item">
             <div class="pub-title">
-                <a href="https://arxiv.org/abs/2504.07878" target="_blank">
-                    Token level routing inference system for edge devices
+                <a href="https://arxiv.org/abs/2504.07878" target="_blank" rel="noopener noreferrer">
+                    Token-level routing inference system for edge devices
                 </a>
             </div>
             <div class="pub-authors">
-                <strong>Jianshu She</strong>, Wenhao Zheng, Zhengzhong Liu, Hongyi Wang, Eric Xing, 
-                Huaxiu Yao, Qirong Ho
+                <strong>Jianshu She</strong>, Wenhao Zheng, Zhengzhong Liu, Hongyi Wang, Eric Xing, Huaxiu Yao, Qirong Ho
             </div>
             <div class="pub-venue">ACL Demo 2025</div>
-            <div class="pub-links">
-                [<a href="https://arxiv.org/abs/2504.07878" target="_blank">PDF</a>]
-            </div>
+            <div class="pub-links">[<a href="https://arxiv.org/abs/2504.07878" target="_blank" rel="noopener noreferrer">PDF</a>]</div>
         </li>
 
         <li class="pub-item">
             <div class="pub-title">
-                <a href="https://arxiv.org/abs/2508.01892" target="_blank">
+                <a href="https://arxiv.org/abs/2508.01892" target="_blank" rel="noopener noreferrer">
                     Linear Steerability in Language Models: When It Emerges and How It Evolves
                 </a>
             </div>
@@ -180,47 +193,39 @@
                 <strong>Jianshu She</strong>, Xinyue Li, Eric Xing, Zhengzhong Liu, Qirong Ho
             </div>
             <div class="pub-venue">EMNLP 2025</div>
-            <div class="pub-links">
-                [<a href="https://arxiv.org/abs/2508.01892" target="_blank">ArXiv</a>]
-            </div>
+            <div class="pub-links">[<a href="https://arxiv.org/abs/2508.01892" target="_blank" rel="noopener noreferrer">ArXiv</a>]</div>
         </li>
 
         <li class="pub-item">
             <div class="pub-title">
-                <a href="https://arxiv.org/abs/2506.14965" target="_blank">
+                <a href="https://arxiv.org/abs/2506.14965" target="_blank" rel="noopener noreferrer">
                     Revisiting Reinforcement Learning for LLM Reasoning from A Cross-Domain Perspective
                 </a>
             </div>
             <div class="pub-authors">
-                Zhoujun Cheng, Shibo Hao, Tianyang Liu, Fan Zhou, Yutao Xie, Feng Yao, Yuexin Bian, 
-                Yonghao Zhuang, Nilabjo Dey, Yuheng Zha, Yi Gu, Kun Zhou, Yuqi Wang, Yuan Li, 
-                Richard Fan, <strong>Jianshu She</strong>, Chengqian Gao, Abulhair Saparov, Haonan Li, 
+                Zhoujun Cheng, Shibo Hao, Tianyang Liu, Fan Zhou, Yutao Xie, Feng Yao, Yuexin Bian,
+                Yonghao Zhuang, Nilabjo Dey, Yuheng Zha, Yi Gu, Kun Zhou, Yuqi Wang, Yuan Li,
+                Richard Fan, <strong>Jianshu She</strong>, Chengqian Gao, Abulhair Saparov, Haonan Li,
                 Taylor W Killian, Mikhail Yurochkin, Zhengzhong Liu, Eric P Xing, Zhiting Hu
             </div>
             <div class="pub-venue">NeurIPS Datasets & Benchmarks 2025</div>
-            <div class="pub-links">
-                [<a href="https://arxiv.org/abs/2506.14965" target="_blank">PDF</a>]
-            </div>
+            <div class="pub-links">[<a href="https://arxiv.org/abs/2506.14965" target="_blank" rel="noopener noreferrer">PDF</a>]</div>
         </li>
 
         <li class="pub-item">
             <div class="pub-title">
-                <a href="https://arxiv.org/abs/2509.07604" target="_blank">
+                <a href="https://arxiv.org/abs/2509.07604" target="_blank" rel="noopener noreferrer">
                     K2-think: A Parameter-efficient Reasoning System
                 </a>
             </div>
             <div class="pub-authors">
-                Zhoujun Cheng, Richard Fan, Shibo Hao, Taylor W Killian, Haonan Li, Suqi Sun, Hector Ren, 
-                Alexander Moreno, Daqian Zhang, Tianjun Zhong, Yuxin Xiong, Yuanzhe Hu, Yutao Xie, 
-                Xudong Han, Yuqi Wang, Varad Pimpalkhute, Yonghao Zhuang, Aaryamonvikram Singh, 
-                Xuezhi Liang, Anze Xie, <strong>Jianshu She</strong>, Desai Fan, Chengqian Gao, 
-                Liqun Ma, Mikhail Yurochkin, John Maggs, Xuezhe Ma, Guowei He, Zhiting Hu, 
+                Zhoujun Cheng, Richard Fan, Shibo Hao, Taylor W Killian, Haonan Li, Suqi Sun, Hector Ren, Alexander Moreno,
+                Daqian Zhang, Tianjun Zhong, Yuxin Xiong, Yuanzhe Hu, Yutao Xie, Xudong Han, Yuqi Wang, Varad Pimpalkhute,
+                Yonghao Zhuang, Aaryamonvikram Singh, Xuezhi Liang, Anze Xie, <strong>Jianshu She</strong>, Desai Fan, Chengqian Gao, Liqun Ma, Mikhail Yurochkin, John Maggs, Xuezhe Ma, Guowei He, Zhiting Hu,
                 Zhengzhong Liu, Eric P Xing
             </div>
             <div class="pub-venue">2025</div>
-            <div class="pub-links">
-                [<a href="https://arxiv.org/abs/2509.07604" target="_blank">PDF</a>]
-            </div>
+            <div class="pub-links">[<a href="https://arxiv.org/abs/2509.07604" target="_blank" rel="noopener noreferrer">PDF</a>]</div>
         </li>
     </ul>
 
@@ -230,12 +235,11 @@
     </p>
     <p>
         Email: <a href="mailto:Jianshu.She@MBZUAI.com">Jianshu.She@MBZUAI.com</a><br>
-        GitHub: <a href="https://github.com/Jianshu1only">github.com/Jianshu1only</a>
+        GitHub: <a href="https://github.com/Jianshu1only" target="_blank" rel="noopener noreferrer">github.com/Jianshu1only</a>
     </p>
 
     <footer>
-        © 2025 Jianshu She · Last updated Dec 2025
+        © 2025 Jianshu She · Last updated <time datetime="2025-12-20">Dec 20, 2025</time>
     </footer>
-
 </body>
 </html>
